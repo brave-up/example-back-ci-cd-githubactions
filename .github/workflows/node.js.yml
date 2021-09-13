@@ -27,4 +27,4 @@ jobs:
     - run: npm -v
     - run: node -v
     - run: npm install
-    - run: sudo pm2 reload server.js
+    - run: sudo pm2 reload app.js
