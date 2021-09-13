@@ -21,7 +21,7 @@ const server = app.listen(
   )
 );
 
-app.get("/", (req, res) => res.send("API Running v2"));
+app.get("/", (req, res) => res.send(`API Running v2 in ${process.env.NODE_ENV}`));
 
 // Handle unhandled promise rejections
 process.on("unhandledRejection", (err, promise) => {
