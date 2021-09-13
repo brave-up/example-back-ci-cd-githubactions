@@ -19,8 +19,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
-      env: 
-        NODE_ENV: ${{ secrets.NODE_ENV_PROD }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
@@ -28,4 +26,4 @@ jobs:
     - run: node -v
     - run: npm install
     # - run: sudo npm install pm2@latest -g
-    - run: pm2 reload server.js --update-env
+    - run: NODE_ENV=${{ secrets.NODE_ENV_PROD }} pm2 reload server.js --update-env
