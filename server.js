@@ -13,6 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 const server = app.listen(
   PORT,
@@ -21,7 +22,7 @@ const server = app.listen(
   )
 );
 
-app.get("/", (req, res) => res.send(`API Running v2 in ${process.env.NODE_ENV}`));
+app.get("/", (req, res) => res.send(`API Running v2 in ${process.env.NODE_ENV} and port ${PORT}`));
 
 // Handle unhandled promise rejections
 process.on("unhandledRejection", (err, promise) => {
