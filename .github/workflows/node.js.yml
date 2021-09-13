@@ -25,5 +25,5 @@ jobs:
     - run: npm -v
     - run: node -v
     - run: npm install
-    - run: sudo npm install pm2@latest -g
+    # - run: sudo npm install pm2@latest -g
     - run: pm2 start server.js
